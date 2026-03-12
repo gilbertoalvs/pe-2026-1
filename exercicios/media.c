@@ -3,17 +3,17 @@
 
 int main(){
 
-    float nota1 [TOTAL_ALUNOS];
-    float nota2 [TOTAL_ALUNOS];
-    float media [TOTAL_ALUNOS];
-    float soma = 0, media_turma;
+    double nota1 [TOTAL_ALUNOS];
+    double nota2 [TOTAL_ALUNOS];
+    double media [TOTAL_ALUNOS];
+    double soma = 0, media_turma;
 
     for(int i =0; i < TOTAL_ALUNOS; i++){
         printf("Digite as notas do aluno %d:\n", i + 1);
         printf("Nota 1: ");
-        scanf("%f", &nota1[i]);
+        scanf("%lf", &nota1[i]);
         printf("Nota 2: ");
-        scanf("%f", &nota2[i]);
+        scanf("%lf", &nota2[i]);
 
         media[i] = (nota1[i] * 2 + nota2[i] * 3) / 5;
 
