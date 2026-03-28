@@ -92,11 +92,11 @@ void zerarAbaixoDiagonalPrincipal(int m[][COL], int lin, int col)
     if (lin != col)
     {
         printf("Essa matriz não é quadrada!\n");
-        return 0;
+        return;
     }
     for (int i = 0; i < lin; i++)
     {
-        for (int j = 0; j < col; i++)
+        for (int j = 0; j < col; j++)
         {
             if (i > j)
             {
@@ -111,7 +111,7 @@ void zerarAbaixoDiagonalPrincipalOtimizada(int m[][COL], int lin, int col)
     if (lin != col)
     {
         printf("Essa matriz não é quadrada!\n");
-        return 0;
+        return;
     }
     for (int i = 1; i < lin; i++)
     {
