@@ -8,6 +8,7 @@ void preencheMatrizAleatorio(int m[][COL], int lin, int col);
 void matSoma(int a[][COL], int b[][COL], int soma [][COL]);
 void imprimirMatriz(int m[][COL], int lin, int col);
 void matTransposta(int m[][COL], int lin, int col);
+void matMult(int matA[][COL], int matB[][COL], int matRes[][COL], int linA, int colA, int linB, int colB);
 
 int main(){
 
@@ -15,6 +16,7 @@ int main(){
     int A[LIN][COL];
     int B[LIN][COL];
     int soma[LIN][COL];
+    int mult[LIN][COL];
 
     preencheMatrizAleatorio(A, LIN, COL);
     preencheMatrizAleatorio(B, LIN, COL);
@@ -29,6 +31,9 @@ int main(){
     printf("Matriz transposta de soma:\n");
     matTransposta(soma, LIN, COL);
     imprimirMatriz(soma, LIN, COL);
+    printf("Matriz multiplicada:\n");
+    matMult(A, B, mult, LIN, COL, LIN, COL);
+    imprimirMatriz(mult, LIN, COL);
     return 0;
 }
 
@@ -81,3 +86,21 @@ void matTransposta(int m[][COL],int lin, int col){
 // e matMulti que realize a multiplicação das matrizes matA e matB, e
 // salve o resultado em matMult. Verifique inicialmente se as 3 matrizes
 // são compatíveis.
+
+void matMult(int matA[][COL], int matB[][COL], int matRes[][COL], int linA, int colA, int linB, int colB){
+
+    if(colA != linB){
+        printf("Erro! As matrizes solicitadas não podem ser multiplicadas");
+        return;
+    }
+
+    for(int i = 0; i < linA; i++){
+        for(int j = 0; j < colB; j++){
+            matRes[i][j] = 0;
+            for(int k = 0; k < colA; k++){
+                matRes[i][j] += matA[i][k] * matB[k][j];
+            }
+        }
+    }
+
+}
