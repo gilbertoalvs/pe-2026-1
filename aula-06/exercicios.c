@@ -72,7 +72,7 @@ void imprimirMatriz(int m[][COL], int lin, int col){
 
 void matTransposta(int m[][COL],int lin, int col){
     int aux;
-    for(int i = 0; i < lin; i++){
+    for(int i = 0; i < lin-1; i++){
         for(int j = i + 1; j < col; j++){
             aux = m[i][j];
             m[i][j] = m[j][i];
@@ -90,7 +90,7 @@ void matTransposta(int m[][COL],int lin, int col){
 void matMult(int matA[][COL], int matB[][COL], int matRes[][COL], int linA, int colA, int linB, int colB){
 
     if(colA != linB){
-        printf("Erro! As matrizes solicitadas não podem ser multiplicadas");
+        printf("Erro! As matrizes solicitadas não podem ser multiplicadas\n");
         return;
     }
 
