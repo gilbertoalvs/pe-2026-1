@@ -29,7 +29,8 @@ int main(){
 }
 
 void lerStr(char str[], int tamMax){
-    fgets(str, TAM_MSG, stdin);
+    fgets(str, TAM_MSG, stdin); // Ler String de forma segura. 
+    // stdin - Definir que a informação vem do teclado.
     int tam = meuStrLen(str);
     if(tam > 0 && str[tam -1] == '\n'){
         str[tam -1] = '\0';
