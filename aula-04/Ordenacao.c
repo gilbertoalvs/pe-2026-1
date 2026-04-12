@@ -69,7 +69,6 @@ void selectionSort(int v[], int n){
 
 void insertionSort(int v[], int n){
     int i, j, chave;
-
     for(i = 1; i <= n -1; i++){
         chave = v[i];
         j = i - 1;
