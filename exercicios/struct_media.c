@@ -51,9 +51,9 @@ void lerDados(struct Aluno *a){
                 printf("Erro: Digite um numero valido entre 0 e 10.\n");
                 while(getchar() != '\n');
             }
-         }    
-      }      
-    }
+        }    
+    }      
+}
 
 void calcularMedia(struct Aluno *a){
     for(int i = 0; i < TOTAL_ALUNOS; i++){
