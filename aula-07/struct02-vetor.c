@@ -24,6 +24,7 @@ void buscarNomes(struct Pessoa vp[], int tam);
 void bubbleSortPorNome(struct Pessoa vp[], int tam);
 void inserçãoDiretaPorNome(struct Pessoa v[], int n);
 void selectionSortPorIdade(struct Pessoa v[], int n);
+void insercaoDiretaPorIdadeDecrescNomeCresc(struct Pessoa v[], int n);
 
 int main(){
 
@@ -49,11 +50,7 @@ void lerStr(char str[], int tamMax){
 }
 
 void imprimirPessoa(struct Pessoa p){
-    printf("Nome: %s\n", p.nome);
-    printf("Idade: %d\n", p.idade);
-    printf("Peso: %.2lf\n", p.peso);
-    printf("Altura: %.2lf\n", p.altura);
-    printf("IMC: %.2lf\n", calcularIMC(p));
+    printf("[%10s: %d anos, %.2lf quilos, %.2lf m, IMC: %.2lf]\n", p.nome, p.idade, p.peso, p.altura, calcularIMC(p));
 }
 
 void preencherPessoa(struct Pessoa *p){
@@ -167,5 +164,19 @@ void selectionSortPorIdade(struct Pessoa v[], int n){
         aux = v[i];
         v[i] = v[menor];
         v[menor] = aux;
+    }
+}
+
+void insercaoDiretaPorIdadeDecrescNomeCresc(struct Pessoa v[], int n) {
+    int i, j;
+    struct Pessoa chave;
+    for (i = 1; i <= n - 1; i += 1) {
+        chave = v[i];
+        j = i - 1;
+        while (j >= 0 && (v[j].idade < chave.idade || (v[j].idade == chave.idade && strcmp(v[j].nome, chave.nome) > 0))) {
+            v[j+1] = v[j];
+            j -= 1;
+        }
+        v[j+1] = chave;
     }
 }
