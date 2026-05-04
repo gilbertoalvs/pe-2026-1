@@ -22,6 +22,8 @@ double calcularMediaAltura(struct Pessoa vp[], int tam);
 int buscaSequencialPorNome(struct Pessoa vp[], int tam, char x[]);
 void buscarNomes(struct Pessoa vp[], int tam);
 void bubbleSortPorNome(struct Pessoa vp[], int tam);
+void inserçãoDiretaPorNome(struct Pessoa v[], int n);
+void selectionSortPorIdade(struct Pessoa v[], int n);
 
 int main(){
 
@@ -136,4 +138,34 @@ void bubbleSortPorNome(struct Pessoa v[], int tam){
         }
         fim = pos - 1;
     } 
+}
+
+void inserçãoDiretaPorNome(struct Pessoa v[], int n){
+    int i, j;
+    struct Pessoa chave;
+    for(i = 1; i <= n-1; i++){
+        chave = v[i];
+        j = i-1;
+        while(j >= 0 && strcmp(v[j].nome, chave.nome) > 0){
+            v[j+1] = v[j];
+            j--;
+        }
+        v[j+1] = chave;
+    }
+}
+
+void selectionSortPorIdade(struct Pessoa v[], int n){
+    int i, j, menor;
+    struct Pessoa aux;
+    for (i = 0; i < n; i++){
+        menor = i;
+        for (j = i + 1; j <= n - 1; j++){
+            if (v[j].idade < v[menor].idade){
+                menor = j;
+            }
+        }
+        aux = v[i];
+        v[i] = v[menor];
+        v[menor] = aux;
+    }
 }
