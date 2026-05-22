@@ -1,0 +1,78 @@
+Acre
+180000
+800
+Amapá
+195000
+721
+Amazonas
+162000
+495
+Pará
+210000
+922
+Rondônia
+96000
+236
+Roraima
+145000
+365
+Tocantins
+400000
+743
+Alagoas
+560000
+1230
+Bahia
+1092435
+2000
+Ceará
+961000
+1420
+Maranhão
+865000
+642
+Paraíba 
+1450132
+850
+Pernambuco
+3750963
+5654
+Piauí
+2000000
+3253
+Rio grande do Norte
+2856421
+1753
+Sergipe
+1890654
+1400
+Goiás
+2345963
+7563
+Mato grosso
+1865955
+1963
+Mato Grosso do Sul
+4523642
+6220
+Santa Catarina
+8956230
+4256
+Espírito Santo
+6325947
+10985
+Minas Gerais
+12895637
+76985
+Rio de Janeiro
+21856321
+20865
+São Paulo
+29865742
+29587
+Paraná
+11326957
+8475
+Rio grande do Sul
+8632578
+14259
