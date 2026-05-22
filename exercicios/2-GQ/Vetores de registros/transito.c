@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 
-#define TAM_NOME 200
+#define TAM_NOME 100
 #define TAM_ESTADO 26
 
 struct Estado{
@@ -117,7 +117,7 @@ double mediaAcidentes(struct Estado *e, int tam){
 void calcularAcimaDaMedia(struct Estado *e, int tam, double media){
     int cont = 0;
     printf("Estados brasileiros acima da média de acidentes:\n");
-    printf("----------------------");
+    printf("----------------------\n");
     for(int i = 0; i < tam; i++){
         if(e[i].acidente > media){
             printf("%s -> %d acidentes\n", e[i].nome, e[i].acidente);
