@@ -31,7 +31,7 @@ Ceará
 Maranhão
 865000
 642
-Paraíba 
+Paraíba
 1450132
 850
 Pernambuco
@@ -40,7 +40,7 @@ Pernambuco
 Piauí
 2000000
 3253
-Rio grande do Norte
+Rio Grande do Norte
 2856421
 1753
 Sergipe
@@ -49,7 +49,7 @@ Sergipe
 Goiás
 2345963
 7563
-Mato grosso
+Mato Grosso
 1865955
 1963
 Mato Grosso do Sul
@@ -73,6 +73,6 @@ São Paulo
 Paraná
 11326957
 8475
-Rio grande do Sul
+Rio Grande do Sul
 8632578
 14259

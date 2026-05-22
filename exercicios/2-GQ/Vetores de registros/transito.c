@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 
-#define TAM_NOME 50
+#define TAM_NOME 200
 #define TAM_ESTADO 26
 
 struct Estado{
@@ -51,24 +51,31 @@ void lerStr(char str[], int tamMax){
     int tam = strlen(str);
     if(tam > 0 && str[tam-1] == '\n'){
         str[tam-1] = '\0';
+        tam--;
+    }
+    if(tam > 0 && str[tam-1] == '\r'){
+        str[tam-1] = '\0';
     }
 }
 
 // Letra A
 void preencherDados(struct Estado *e, int tam){
-    char tempStr[TAM_NOME];
+    char buf[TAM_NOME];
     printf("Preencha os dados solicitados: \n");
-    for(int i = 0; i < TAM_ESTADO; i++){
+    for(int i = 0; i < tam; i++){
         printf("--------------------------\n");
         printf("Nome do estado %d: ", i + 1);
         lerStr(e[i].nome, TAM_NOME);
+
         printf("Quantidade de veículos: ");
-        scanf("%d", &e[i].veiculo);
+        fgets(buf, TAM_NOME, stdin);
+        sscanf(buf, "%d", &e[i].veiculo);
+
         printf("Quantidade de acidentes: ");
-        scanf("%d", &e[i].acidente);
-        lerStr(tempStr, TAM_NOME); // Limpa o buffer.
-        printf("--------------------------\n");
+        fgets(buf, TAM_NOME, stdin);
+        sscanf(buf, "%d", &e[i].acidente);
     }
+    printf("--------------------------\n");
 }
 
 // Letra B
