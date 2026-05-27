@@ -72,6 +72,13 @@ int main(){
             default: printf("\nOpcao invalida.\n");
         }
 
+        if (op != 0) {
+        printf("\nPressione ENTER para voltar ao menu...");
+        int c;
+        while ((c = getchar()) != '\n' && c != EOF);
+        getchar(); 
+    }
+
     } while(op != 0);
 
     return 0;
