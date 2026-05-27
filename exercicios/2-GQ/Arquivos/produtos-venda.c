@@ -77,7 +77,7 @@ int main(){
         int c;
         while ((c = getchar()) != '\n' && c != EOF);
         getchar(); 
-    }
+        }
 
     } while(op != 0);
 
