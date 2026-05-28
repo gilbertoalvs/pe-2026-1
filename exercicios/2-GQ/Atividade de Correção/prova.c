@@ -23,6 +23,58 @@ void imprimirProdutos(struct Produto vp[], int qtdProdutos, struct Categoria vc[
 void selectionSortPorDescricao(struct Produto v[], int qtd);
 void buscaBinariaPorDescricao(struct Produto v[], int qtd, char *x);
 
+int main() {
+    struct Categoria categorias[TAM];
+    int qtdCategorias = 0;
+
+    struct Produto produtos[TAM];
+    int qtdProdutos = 0; 
+
+    int opcao;
+    char descricaoBusca[256];
+
+    do {
+        printf("\n===== MENU PRINCIPAL =====\n");
+        printf("1. Cadastrar categoria\n");
+        printf("2. Imprimir categorias\n");
+        printf("3. Imprimir produtos\n");
+        printf("4. Ordenar produtos por descricao\n");
+        printf("5. Busca binaria por descricao\n");
+        printf("0. Sair\n");
+        printf("Escolha uma opcao: ");
+        scanf("%d", &opcao);
+        getchar(); 
+
+        switch (opcao) {
+            case 1:
+                cadastrarCategoria(categorias, &qtdCategorias);
+                break;
+            case 2:
+                imprimirCategorias(categorias, qtdCategorias);
+                break;
+            case 3:
+                imprimirProdutos(produtos, qtdProdutos, categorias, qtdCategorias);
+                break;
+            case 4:
+                selectionSortPorDescricao(produtos, qtdProdutos);
+                printf("Vetor de produtos ordenado com sucesso!\n");
+                break;
+            case 5:
+                printf("\nDigite a descricao que deseja buscar: ");
+                lerStr(descricaoBusca, 256);
+                buscaBinariaPorDescricao(produtos, qtdProdutos, descricaoBusca);
+                break;
+            case 0:
+                printf("\nEncerrando o programa...\n");
+                break;
+            default:
+                printf("\nOpcao invalida. Tente novamente.\n");
+        }
+    } while (opcao != 0);
+
+    return 0;
+}
+
 void lerStr(char str[], int tamMax){
     fgets(str, tamMax, stdin);
     int tam = strlen(str);
